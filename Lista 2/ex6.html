@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+
+    <!--Faça um programa que, dado um conjunto de N números, determine o menor valor, o
+maior valor e a soma dos valores.-->
+
+    <script>
+        var v1;
+        var v2;
+        var i;
+        var maior;
+        var menor;
+        var soma = 0;
+
+        v1 = parseInt(prompt("Digite o primeiro numero: "));
+        v2 = parseInt(prompt("Digite o segundo numero: "));
+        alert("A sequencia numerica aparecerá no console!")
+
+        if (v1 < v2) {
+            for (i = v1; i <= v2; i++) {
+                console.log(i)
+                soma = soma + i
+            }
+            alert("O menor valor é: " + v1)
+        }
+        else if (v2 < v1) {
+            for (i = v1; i <= v2; i++) {
+                console.log(i)
+                soma = soma + i
+            }
+            alert("O menor valor é: " + v2)
+        }
+        alert("A soma entre eles é = " + soma); 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

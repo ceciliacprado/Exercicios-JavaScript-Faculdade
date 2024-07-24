@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 3</title>
+</head>
+
+<body>
+    <script>
+        var alternativa;
+        var n;
+        var a, b, c, d;
+
+        n = parseInt(prompt("Escolha o número de piscinas: "));
+        alternativa = prompt("Escolha uma das aternativas para ver as informações: ");
+        var grosso = 67 * n;
+        var medio = 205 * n;
+        var fino = 6 * n;
+        var perdag = 3 * n;
+        var perdam = 18.45 * n; //porcentagem
+        var perdaf = 5.5 * n; //porcentagem
+
+        if (alternativa === "a") {
+            let v1g = grosso * 1
+            let v2g = perdag * 100
+            let mediag = v2g / v1g
+            alert("O percentual de perda do cano grosso é: " + mediag)
+        }
+        else if (alternativa === "b") {
+            gcm = perdag * 100
+            mcm = perdam * 100
+            fcm = perdaf * 100
+            let media2 = (gcm + mcm + fcm) / 3
+            alert("A média em CM da perda dos 3 canos é: " + media2)
+        }
+        else if (alternativa === "c") {
+            let canog = grosso - perdag
+            let canom = medio - perdam
+            let canof = fino - perdaf
+            let soma = canog + canom + canof
+            alert("A soma dos canos tirando as perdas ficam em: " + soma)
+        }
+        else if (alternativa === "d") {
+            let v1g = grosso * 1
+            let v2g = perdag * 100
+            let mediag = v2g / v1g
+
+            let v1m = medio * 1
+            let v2m = perdam * 100
+            let mediam = v2m / v1m
+
+            let v1f = fino * 1
+            let v2f = perdaf * 10
+            let mediaf = v2f / v1f
+
+            let somapercent = mediag + mediam + mediaf
+            let mediapercent = somapercent / 3
+            alert("A media dos percentuais das perdas dos canos é: " + mediapercent)
+        } else {
+            alert("Essa alternativa não existe!")
+        }
+
+
+    </script>
+
+</body>
+
+</html>

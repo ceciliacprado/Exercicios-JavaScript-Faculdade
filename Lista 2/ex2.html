@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+
+    <!--Altere o programa anterior para mostrar no final a soma dos números.-->
+
+    <script>
+        var n1;
+        var n2;
+        var i;
+        var soma = 0;
+
+        n1 = parseInt(prompt("Digite um número inteiro: "));
+        n2 = parseInt(prompt("Digite outro número inteiro: "));
+        alert("Acontagem desse número fica: ");
+
+        if (n1 < n2) {
+            let inicio = n1
+            let fim = n2
+
+            for (i = inicio; i <= fim; i++) {
+                alert(i)
+                soma = soma + i
+            }
+        }
+
+        else if (n2 < n1) {
+            let inicio = n2
+            let fim = n1
+
+            for (i = inicio; i <= fim; i++) {
+                alert(i)
+                soma = soma + i
+            }
+        }
+
+        alert("A soma dos números fica: " + soma);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+
+    <!--Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário.
+Ex.: 5!=5.4.3.2.1=120-->
+
+    <script>
+        var fatorial;
+        var i;
+
+        fatorial = parseInt(prompt("Digite um número inteiro para fazer o fatorial: "));
+        var result = fatorial;
+
+        if (fatorial > 0) {
+            for (i = fatorial - 1; i >= 1; i--) {
+                result = i * result;
+            }
+        }
+        console.log(result)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!--Escreva um algoritmo que permita a leitura das notas de uma turma de 20 alunos.
+Calcular a média da turma e contar quantos alunos obtiveram nota acima desta
+média calculada. Escrever a média da turma e o resultado da contagem.-->
+
+<script>
+    var nota = [];
+    var cont = 0;
+    var soma = 0;
+    var media = 0;
+
+    for (var i = 0; i < 5; i++) {
+        var valor = parseFloat(prompt("Digite a nota " + i + ":"));
+        nota.push(valor);
+        cont++;
+        soma = soma + valor;
+    }
+
+    // Armazenar nota no localStorage
+    localStorage.setItem("notas", JSON.stringify(nota));
+
+    console.log(nota);
+
+    media = soma / cont;
+    parseFloat(console.log("A média da turma é " + media.toFixed(2)));
+
+    var maiormedia = [];
+
+    for (i = 0; i < 5; i++) {
+        if (nota[i] >= media) {
+            var valor = nota[i];
+            maiormedia.push(valor);
+        }
+    }
+
+    // Armazenar maiormedia no localStorage
+    localStorage.setItem("notasMaiorMedia", JSON.stringify(maiormedia));
+
+    console.log("As notas maiores que a média foram: " + maiormedia);
+    console.log(JSON.stringify(maiormedia));
+</script>

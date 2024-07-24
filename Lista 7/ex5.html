@@ -1,0 +1,42 @@
+<!--Faça um algoritmo para ler dois vetores V1 e V2 de 15 números cada. Calcular e
+escrever a quantidade de vezes que V1 e V2 possuem os mesmos números e nas
+mesmas posições.-->
+
+<script>
+    var vet1 = [];
+    var vet2 = [];
+
+    for (var i = 0; i < 15; i++) {
+        var valor1 = parseInt(prompt("Digite o valor da posição " + i + " para o primeiro vetor"));
+        vet1.push(valor1);
+    }
+    console.log(vet1);
+
+    var valor2 = 0;
+
+    for (var i = 0; i < 15; i++) {
+        var valor2 = parseInt(prompt("Digite o valor da posição " + i + " para o segundo vetor"));
+        vet2.push(valor2);
+    }
+    console.log(vet2);
+
+    var total = [];
+    var valor = 0;
+
+    for (var i = 0; i < 15; i++) {
+        if (vet1[i] === vet2[i]) {
+            valor = vet1[i];
+            total.push(valor);
+        }
+    }
+
+    if (total.length > 0) {
+        console.log("Os mesmos números nas mesmas posições são: " + total);
+        console.log(JSON.stringify(total));
+
+        // Armazenar total no localStorage
+        localStorage.setItem("numerosIguais", JSON.stringify(total));
+    } else {
+        console.log("NENHUM NÚMERO É IGUAL NA POSIÇÃO E NO VALOR.");
+    }
+</script>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Segundo Bimestre</title>
+</head>
+
+<body>
+
+    <!-- 4 funções (2 com 2 parametros)
+    porcentagem 
+    quatro operações matematicas 
+    switch case 
+    comendo for 
+    comando while 
+    ter if else 
+
+    localstorage 
+    json 
+
+    Ideia: Uma empresa produz um número entre 50 a 100 de produtos por dia, o código calcula a média de produção diária de uma empresa, com resultados da produção, supondo que a empresa trabalha exatamente 5 dias por semana. -->
+
+    <script>
+        const dias = 7;
+        let vetordias = [];
+        let somaDias = 0;
+
+        function mediaProd() {
+            return parseFloat(somaDias / dias);
+        }
+
+        function resultadosProd(media) {
+            if (media >= 100) {
+                return 'Excelente!';
+            } else if (media >= 70) {
+                return 'Bom!';
+            } else if (media >= 50) {
+                return 'Regular';
+            } else {
+                return 'Ruim!';
+            }
+        }
+
+        function feedbackProd(resultados) {
+            switch (resultados) {
+                case 'Excelente!':
+                    return 'Parabéns! A empresa está muito produtiva!';
+                case 'Bom!':
+                    return 'Continue assim, a empresa está no caminho certo.';
+                case 'Regular':
+                    return 'A empresa pode melhorar!';
+                default:
+                    return 'É necessário uma revisão dos métodos de trabalho e mudanças, para que a produção aumente!';
+            }
+        }
+
+        function salvarNoLocalStorage(media, resultados, feedback) {
+            const dadosProducao = {
+                mediaProducao: media,
+                resultadoProducao: resultados,
+                feedbackProducao: feedback
+            };
+
+            console.log('dadosProducao', JSON.stringify(dadosProducao));
+        }
+
+        function ResultadoEfeedback() {
+            const media = mediaProd();
+            const resultados = resultadosProd(media);
+            const feedback = feedbackProd(resultados);
+
+            console.log("A média diária da produção é: " + media);
+            console.log("Resultado da produção: " + resultados);
+            console.log("Feedback do resultado: " + feedback);
+
+            salvarNoLocalStorage(media, resultados, feedback);
+        }
+
+        function exibirDadosArmazenados() {
+
+            const dadosArmazenados = localStorage.getItem('dadosProducao');
+            const dadosObjeto = JSON.parse(dadosArmazenados);
+
+            console.log("Dados armazenados no localStorage:");
+            console.log("Média: " + dadosObjeto.mediaProducao);
+            console.log("Resultado: " + dadosObjeto.resultadoProducao);
+            console.log("Feedback: " + dadosObjeto.feedbackProducao);
+        }
+
+        let funcionamento;
+
+        while (funcionamento !== 2) {
+            funcionamento = parseFloat(prompt("Digite 1 para iniciar e 2 para parar o programa!"));
+
+            if (funcionamento === 1) {
+                for (let i = 0; i < dias; i++) {
+                    vetordias[i] = parseFloat(prompt("Digite o total da produção do dia " + (i + 1)));
+                }
+
+                for (let i = 0; i < dias; i++) {
+                    somaDias += vetordias[i];
+                }
+
+                ResultadoEfeedback();
+            } else if (funcionamento === 2) {
+                break;
+            }
+        }
+        exibirDadosArmazenados();
+
+
+    </script>
+
+
+</body>
+
+</html>

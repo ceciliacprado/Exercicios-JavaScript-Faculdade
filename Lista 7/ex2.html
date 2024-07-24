@@ -1,0 +1,31 @@
+<!--Faça um algoritmo para ler 20 números e armazenar em um vetor. Após a leitura
+total dos 20 números, o algoritmo deve escrever esses 20 números lidos na ordem
+inversa.-->
+
+<script>
+    var vet = [];
+
+    for (var i = 0; i < 20; i++) {
+        var valor = parseInt(prompt("Digite o número para a posição " + i + ":"));
+        vet.push(valor);
+    }
+
+    // Armazenar vet no localStorage
+    localStorage.setItem("vet", JSON.stringify(vet));
+
+    console.log(vet);
+
+    var vet1 = [];
+
+    for (var i = 19; i >= 0; i--) {
+        var valor = vet[i];
+        vet1.push(valor);
+    }
+
+    // Armazenar vet1 no localStorage
+    localStorage.setItem("vet1", JSON.stringify(vet1));
+
+    console.log(vet1);
+    console.log(JSON.stringify(vet));
+    console.log(JSON.stringify(vet1));
+</script>

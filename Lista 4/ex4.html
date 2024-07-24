@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<!--Questão: Uma loja está levantando o valor total de todas as mercadorias em estoque.
+Escreva um algoritmo que permita a entrada das seguintes informações: a) o
+número total de mercadorias no estoque; b) o valor de cada mercadoria. Ao final
+imprimir o valor total em estoque e a média de valor das mercadorias.-->
+
+<body>
+    <script>
+        var mercadorias;
+        var vetor = [];
+        var mediaM;
+        var soma = 0;
+
+        mercadorias = parseInt(prompt("Digite o valor total de mercadorias: "));
+        for (i = 0; i < mercadorias; i++) {
+            var valor = parseInt(prompt("Digite o valor da mercadoria " + i + " :"));
+            vetor.push(valor);
+            soma = soma + vetor[i];
+        }
+
+        console.log("O valor total em estoque é: " + soma);
+        console.log(JSON.stringify(soma));
+
+    </script>
+
+</body>
+
+</html>
